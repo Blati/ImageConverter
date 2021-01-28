@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <p><a href="{% url 'home' %}">Назад к списку</a></p>
+    {% if messages %}
+        {% for message in messages %}
+            <strong>{{ message }}</strong>
+        {% endfor %}
+    {% endif %}
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Отправить</button>
+    </form>
+{% endblock %}
