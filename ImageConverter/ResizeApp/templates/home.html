@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Список изображений</h1>
+    {% if data %}
+        {% for img in data %}
+            <p><a href="{{img.image.name}}">{{img.image.name}}</a></p>
+        {% endfor %}
+    {% else %}
+        <h4>Нет доступных изображений</h4>
+    {% endif %}
+    <p><a href="#">Добавить изображение</a></p>
+{% endblock %}
