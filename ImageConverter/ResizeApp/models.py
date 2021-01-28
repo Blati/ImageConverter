@@ -6,8 +6,8 @@ from django.db import models
 
 
 class Image(models.Model):
-    image = models.URLField(max_length=255)
-    link = models.FileField(verbose_name="Файл", blank=True)
+    image = models.URLField(verbose_name="Файл", max_length=255)
+    link = models.FileField(verbose_name="Ссылка", blank=True)
     uploaded_at = models.DateTimeField(auto_now_add=True)
 
     def save(self, *args, **kwargs):
