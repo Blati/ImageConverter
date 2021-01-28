@@ -5,7 +5,7 @@ from django.core.files import File
 from django.db import models
 
 
-class Document(models.Model):
+class Image(models.Model):
     image = models.URLField(max_length=255)
     link = models.FileField(verbose_name="Файл", blank=True)
     uploaded_at = models.DateTimeField(auto_now_add=True)
