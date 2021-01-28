@@ -18,6 +18,7 @@ def upload_image(request):
     if request.method == 'POST':
         form = ImageForm(request.POST, request.FILES)
         if form.is_valid():
+            print(form.cleaned_data)
             if not form.cleaned_data['link'] and not form.cleaned_data['image']:
                 messages.add_message(request,
                                      messages.ERROR,
