@@ -11,10 +11,10 @@ class Image(models.Model):
     uploaded_at = models.DateTimeField(auto_now_add=True)
 
     def save(self, *args, **kwargs):
-        if self.image and not self.link:
-            result = urllib.request.urlretrieve(self.image)
-            self.link.save(
-                os.path.basename(self.image),
+        if self.link and not self.image:
+            result = urllib.request.urlretrieve(self.link)
+            self.image.save(
+                os.path.basename(self.link),
                 File(open(result[0], 'rb'))
             )
             self.save()

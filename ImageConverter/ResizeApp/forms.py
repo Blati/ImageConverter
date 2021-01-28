@@ -6,7 +6,7 @@ from ResizeApp.models import Image
 class ImageForm(forms.ModelForm):
     class Meta:
         model = Image
-        fields = ('link', 'image',)
+        fields = ('link', 'image', )
 
 
 class UserForm(forms.Form):
