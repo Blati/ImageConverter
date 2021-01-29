@@ -11,7 +11,14 @@
     {% endif %}
     <form action="" method="post" enctype="multipart/form-data">
         {% csrf_token %}
-        {{ form.as_p }}
+        <p>
+            <label for="id_width">Ширина:</label>
+            <input type="text" name="width" maxlength="5" id="id_width" placeholder="{{ data.image.width }}">
+        </p>
+        <p>
+            <label for="id_height">Высота:</label>
+            <input type="text" name="height" maxlength="5" id="id_height" placeholder="{{ data.image.height }}">
+        </p>
         <button type="submit">Отправить</button>
     </form>
 {% endblock %}
